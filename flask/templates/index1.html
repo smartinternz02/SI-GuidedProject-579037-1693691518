@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Artificial Intelligence and Sign Recognition</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+    <h2>Real-Time Communication System Powered By AI&nbsp;For Specially Abled</h2>
+    <div class="image-container" style="background-image: url('{{ url_for('static', filename='img/s5.png') }}');
+                                       background-size: cover;
+                                       background-image: fixed;
+                                       background-repeat: no-repeat;">
+    </div>
+    <div class="content">
+        <h3>About the Project:</h3>
+        <p>Artificial Intelligence has made it possible to handle our daily activities in new and simpler ways. With
+            the ability to automate tasks that normally require human intelligence, such as speech and voice
+            recognition, visual perception, predictive text functionality, decision-making, and a variety of other
+            tasks, AI can assist people with disabilities by significantly improving their ability to get around and
+            participate in daily activities.</p>
+        <p>Currently, Sign Recognition is available <strong>only for alphabets A-I</strong> and not for J-Z, since
+            J-Z alphabets also require Gesture Recognition for them to be able to be predicted correctly to a certain
+            degree of accuracy.</p>
+        <div class="button-container">
+            <button class="button"><a href="{{url_for('index2')}}">Click Here</a></button>
+        </div>
+    </div>
+</body>
+
+</html>

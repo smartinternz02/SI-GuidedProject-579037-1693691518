@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Artificial Intelligence and Sign Recognition</title>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-image: url("{{ url_for('static', filename='img/s2.jpg') }}");
+            background-size: cover;
+            background-repeat: no-repeat;
+            backdrop-filter: blur(3px);
+        }
+
+        .video-frame {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .image-container {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .image-container img {
+            max-width: 80%;
+            max-height: 80%;
+        }
+
+        .open-image-button, .close-button {
+            padding: 10px 20px;
+            background-color: #0a6606;
+            border-radius: 5%;
+            color: #f5eded;
+            border: none;
+            cursor: pointer;
+            font-size: 15px;
+            position: absolute;
+        }
+
+        .open-image-button {
+            bottom: 20px; /* Position the "Open Image" button at the bottom */
+            left: 50%; /* Center horizontally */
+            transform: translateX(-50%);
+        }
+
+        .close-button {
+            top: 20px;
+            right: 20px;
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- Video frame container -->
+    <div class="video-frame-container">
+        <!-- Video frame -->
+        <img src="{{ url_for('video_feed') }}" class="video-frame" alt="Camera Access Not Provided!">
+        
+
+        <!-- Image container with the image to be displayed -->
+        <div class="image-container" id="imageContainer">
+            <!-- Image -->
+            <img src="{{ url_for('static', filename='img/back3.png') }}" alt="Image">
+
+            <!-- Close button for the image -->
+            <button class="close-button" onclick="closeImage()">&times;</button>
+        </div>
+
+        <!-- Button to open the image -->
+        <button class="open-image-button" onclick="openImage()">ASL Alphabets</button>
+    </div>
+
+    <!-- JavaScript code to show and hide the image container -->
+    <script>
+        function openImage() {
+            document.getElementById("imageContainer").style.display = "block";
+        }
+
+        function closeImage() {
+            document.getElementById("imageContainer").style.display = "none";
+        }
+    </script>
+</body>
+
+</html>
